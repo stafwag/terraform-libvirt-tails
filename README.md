@@ -89,6 +89,8 @@ $ tofu apply -var="name=private_vm" -var="memory=2048" -var="cpus=6"
 
 ### Module
 
+### Use the git source
+
 ```
 module "tails" {
   source = "git::https://github.com/stafwag/terraform-libvirt-tails.git"
@@ -100,6 +102,21 @@ module "tails" {
 }
 ```
 
+### Use the registry
+
+The module is published on the [Terraform Registry](https://registry.terraform.io/) and
+the [OpenTofu Registry](https://opentofu.org/registry/)
+
+
+```
+module "tails" {
+  source = "stafwag/tails/libvirt"
+  name  = "my-tails-system"
+  memory = 8192
+  cpus = 4
+  tails_iso_path = "/tmp"
+}
+```
 
 
 ***Have fun!***
