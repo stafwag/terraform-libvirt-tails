@@ -9,8 +9,8 @@ There're security considerations when you run tails in a virtual machine see:
 
 The code in this repository:
 
-* Will check for the latest tails release by reading the RSS feed on
-[https://tails.net/doc/upgrade/release_notes/](https://tails.net/doc/upgrade/release_notes/)
+* Will check for the latest tails release by reading the JSON feed on
+[https://tails.net/install/v2/Tails/amd64/stable/latest.json](https://tails.net/install/v2/Tails/amd64/stable/latest.json)
 * Download the latest CDROM image
 * Start a libvirt/KVM virtual machine on GNU/Linux
 
