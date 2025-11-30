@@ -1,5 +1,17 @@
+output "tails_json" {
+
+  value = data.http.tails_json
+
+}
+
+output "jsonData" {
+
+  value = local.jsonData
+
+}
+
 output "tails_version" {
 
-  value = data.external.get_tails_latest_version.result.version
+  value = local.jsonData.installations[0].version
 
 }
