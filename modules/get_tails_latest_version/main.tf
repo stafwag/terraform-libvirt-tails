@@ -8,9 +8,9 @@
 # the tails repository and the official release
 #
 
-data "http" "tails_rss" {
+data "http" "tails_json" {
 
-  url = "https://tails.net/doc/upgrade/release_notes/index.en.rss"
+  url = "https://tails.net/install/v2/Tails/amd64/stable/latest.json"
 
   lifecycle {
     postcondition {
@@ -21,18 +21,8 @@ data "http" "tails_rss" {
 
 }
 
-#
-# There isn't a good way to parse ( as far as I know ) a RSS feed in
-# terrafrom. Using a shell script for now
-#
+locals {
 
-data "external" "get_tails_latest_version" {
+  jsonData  = jsondecode(data.http.tails_json.response_body)
 
-  query = {
-
-    rss_base64 = data.http.tails_rss.response_body_base64
-
-  }
-
-  program = ["bash", "${path.module}/scripts/get_tails_latest_version.sh"]
 }
