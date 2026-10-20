@@ -19,6 +19,7 @@ The code in this repository:
 * **libvirt/kvm**: A working libvirt/KVM GNU/Linux system.
 * **GnuPg**: The module will donwload the latest tails iso disk image and verify the disk image. ```gpg``` is required for this reason.
 * **wget**: ```wget``` is used to download the disk image and signature.
+* **xsltproc**: ```xsltproc``` required by the libvirt provider
 
 ## Module variables
 
