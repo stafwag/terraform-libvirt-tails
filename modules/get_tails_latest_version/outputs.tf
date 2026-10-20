@@ -1,6 +1,6 @@
 output "tails_json" {
 
-  value = data.http.tails_json
+  value = data.http.tails_json.response_body
 
 }
 
